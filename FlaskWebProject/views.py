@@ -122,6 +122,7 @@ def _load_cache():
     if session.get('token_cache'):
         cache.deserialize(session['token_cache'])
         return cache
+    return cache   # Return empty cache if nothing in session
 
 def _save_cache(cache):
     if cache.has_state_changed:
